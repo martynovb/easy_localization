@@ -15,8 +15,12 @@ import 'package:flutter/services.dart';
 ///  }
 ///}
 /// ```
-abstract class AssetLoader {
-  const AssetLoader();
+abstract class AssetLoader<T> {
+  final T? args;
+
+  const AssetLoader({
+    this.args,
+  });
   Future<Map<String, dynamic>?> load(String path, Locale locale);
 }
 
